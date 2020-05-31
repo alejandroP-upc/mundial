@@ -28,6 +28,10 @@ and open the template in the editor.
                     <a href ng-click="toolbar.selectTab(2)">
                         <span class="glyphicon glyphicon-th-list"></span>Ver Participantes</a>
                 </li>
+                <li ng-class="{active:toolbar.isSelected(3)}">
+                    <a href ng-click="toolbar.selectTab(3)">
+                        <span class="glyphicon glyphicon-th-list"></span>Entrar Usuario</a>
+                </li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

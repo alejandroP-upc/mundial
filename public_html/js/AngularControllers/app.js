@@ -54,7 +54,27 @@ aplicacionMundial.controller("competitorCtrl", function($http, $scope){
        $http.post('http://localhost:8081/competitors/add',
        JSON.stringify($scope.competitor)).success(function (data,headers){
            $scope.competitor={};
-           $scope.toolbar.selectTab(2);
+           
+           $scope.toolbar.selectTab(1);
+       });
+   };
+});
+aplicacionMundial.directive('contraForm', function(){
+    return {
+        restrict:'E',
+        templateUrl:'partials/contra_form.html',
+        controller: 'competitorUrl'
+    };
+});
+
+aplicacionMundial.controller("competitorCtrl", function($http, $scope){
+   $scope.addCompetitor=function (){
+       console.log('name');
+       $http.post('http://localhost:8081/competitors/login',
+       JSON.stringify($scope.competitor)).success(function (data,headers){
+           $scope.competitor={};
+           
+           $scope.toolbar.selectTab(1);
        });
    };
 });
